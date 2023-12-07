@@ -34,4 +34,4 @@
    nsp/NSProtocol
    java.util.Date
    :test)
-  (is (= #{:b :a} (nsp/foo (java.util.Date.)))))
+  (is (= #{:b :a :clojure.set/foo} (nsp/foo (java.util.Date.)))))

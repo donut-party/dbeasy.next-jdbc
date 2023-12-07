@@ -9,4 +9,4 @@
 (dbe/def-protocol-template
   NSProtocol
   :test
-  (foo [_] (set/union #{:a} #{:b})))
+  (foo [_] (set/union #{:a} #{:b} #{::set/foo})))
