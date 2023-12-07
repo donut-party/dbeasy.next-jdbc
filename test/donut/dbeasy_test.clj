@@ -14,24 +14,24 @@
   (foo [_] "hi"))
 
 (deftest implements-template
-  (dbe/implement-protocol-template
-   ExampleProtocol
+  (dbe/extend-type-with-protocol-template
    java.util.Date
+   ExampleProtocol
    :test)
   (is (= "hi" (foo (java.util.Date.)))))
 
 (deftest implements-template-with-overrides
-  (dbe/implement-protocol-template
-   ExampleProtocol
+  (dbe/extend-type-with-protocol-template
    java.util.Date
+   ExampleProtocol
    :test
    {"hi" "hello"})
   (is (= "hello" (foo (java.util.Date.)))))
 
 
 (deftest implements-template-with-ns-alias
-  (dbe/implement-protocol-template
-   nsp/NSProtocol
+  (dbe/extend-type-with-protocol-template
    java.util.Date
+   nsp/NSProtocol
    :test)
   (is (= #{:b :a :clojure.set/foo} (nsp/foo (java.util.Date.)))))
