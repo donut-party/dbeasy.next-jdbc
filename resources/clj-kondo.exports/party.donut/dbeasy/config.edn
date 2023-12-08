@@ -1,0 +1,3 @@
+{:hooks
+ {:analyze-call
+  {donut.dbeasy/def-protocol-template donut.dbeasy.hooks/def-protocol-template}}}

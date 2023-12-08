@@ -31,7 +31,7 @@
 
 (deftest implements-template-with-ns-alias
   (dbe/extend-type-with-protocol-template
-   java.util.Date
    nsp/NSProtocol
+   java.util.Date
    :test)
   (is (= #{:b :a :clojure.set/foo} (nsp/foo (java.util.Date.)))))

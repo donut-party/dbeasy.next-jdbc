@@ -1,0 +1,2 @@
+{:linters
+ {:lint-as {donut.hooked/set-hook-fn! def}}}
