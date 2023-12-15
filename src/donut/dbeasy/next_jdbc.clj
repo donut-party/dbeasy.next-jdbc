@@ -5,6 +5,19 @@
    [next.jdbc.sql :as jsql]
    [clojure.string :as str]))
 
+(defprotocol ToSQL
+  (->sql [s]))
+
+(extend-protocol ToSQL
+  clojure.lang.Associative
+  (->sql [s] (sql/format s))
+
+  clojure.lang.IPersistentVector
+  (->sql [s] s)
+
+  java.lang.Object
+  (->sql [s] s))
+
 (defn- database-product-name
   [db]
   (-> (if (isa? (class db) java.sql.Connection)
