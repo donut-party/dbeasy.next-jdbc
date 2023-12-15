@@ -18,7 +18,7 @@
   java.lang.Object
   (->sql [s] s))
 
-(defn- database-product-name
+(defn database-product-name
   [db]
   (-> (if (isa? (class db) java.sql.Connection)
         db
@@ -53,4 +53,4 @@
 
 (defn insert!
   [db table record]
-  (get-inserted-record db (jsql/insert! db table record)))
+  (get-inserted-record db (jsql/insert! db table record) table))
