@@ -4,7 +4,7 @@
    [donut.dbeasy.next-jdbc :as sut]
    [next.jdbc :as jdbc]))
 
-(def ^:dynamic *dbconn*)
+(def ^:dynamic *dbconn* nil)
 
 (defn execute-many!
   [conn stmts]
